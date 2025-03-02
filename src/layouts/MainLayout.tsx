@@ -14,7 +14,7 @@ import {
 } from '@mui/material'
 import { NavLink, useLocation } from 'react-router-dom'
 
-const menu = [
+const menu: IMenu[] = [
   {
     name: 'Герои',
     link: '/characters',

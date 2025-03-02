@@ -31,3 +31,9 @@ interface ICategory {
 	episodes: IEpisode[]
 	locations: ILocation[]
 }
+
+
+interface IMenu {
+	name: string
+	link: string
+}
