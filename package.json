@@ -1,6 +1,7 @@
 {
-  "name": "homework-03",
+  "name": "homework-05",
   "private": true,
+  "homepage": "https://kravtsovartem.github.io/homework-05/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
