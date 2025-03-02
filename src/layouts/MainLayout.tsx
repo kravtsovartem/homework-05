@@ -4,12 +4,9 @@ import {
   Box,
   createTheme,
   CssBaseline,
-  Divider,
   Drawer,
   List,
-  ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   ThemeProvider,
   Toolbar,
@@ -72,7 +69,7 @@ export default function MainLayout() {
           <Box sx={{ overflow: 'auto' }}>
             <List>
               {menu.map((item) => (
-                <NavLink to={item.link}>
+                <NavLink key={item.name} to={item.link}>
                   <ListItemButton selected={item.link === location.pathname}>
                     <ListItemText primary={item.name} />
                   </ListItemButton>

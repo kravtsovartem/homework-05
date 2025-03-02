@@ -1,6 +1,3 @@
-import { Link } from 'react-router-dom'
-import ViewRouter from './router'
-import Style from '@/App.module.scss'
 import MainLayout from '@/layouts/MainLayout'
 
 /**
