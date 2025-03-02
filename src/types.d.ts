@@ -24,3 +24,10 @@ interface ILocation {
 	dimension: string
 	created: string
 }
+
+interface ICategory {
+	[key: string]: ICharacter[] | IEpisode[] | ILocation[]
+	characters: ICharacter[]
+	episodes: IEpisode[]
+	locations: ILocation[]
+}
