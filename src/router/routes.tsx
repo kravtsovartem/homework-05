@@ -1,8 +1,8 @@
-import CharactersPage from '@/pages/CharactersPage'
-import DetailPage from '@/pages/DetailPage'
-import EpisodesPage from '@/pages/EpisodesPage'
+import CategoryPage from '@/pages/CategoryPage'
+import CharacterPage from '@/pages/CharacterPage'
+import LocationPage from '@/pages/LocationPage'
+import EpisodePage from '@/pages/EpisodePage'
 import IndexPage from '@/pages/IndexPage'
-import LocationsPage from '@/pages/LocationsPage'
 
 const routes = [
   {
@@ -11,19 +11,27 @@ const routes = [
   },
   {
     path: '/characters',
-    element: <CharactersPage />,
+    element: <CategoryPage />,
   },
   {
     path: '/locations',
-    element: <LocationsPage />,
+    element: <CategoryPage />,
   },
   {
     path: '/episodes',
-    element: <EpisodesPage />,
+    element: <CategoryPage />,
   },
   {
-    path: '/detail/:id',
-    element: <DetailPage />,
+    path: '/characters/:id',
+    element: <CharacterPage />,
+  },
+  {
+    path: '/locations/:id',
+    element: <LocationPage />,
+  },
+  {
+    path: '/episodes/:id',
+    element: <EpisodePage />,
   },
   {
     path: '*',
