@@ -12,7 +12,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 const menu: IMenu[] = [
   {
@@ -43,6 +43,7 @@ const theme = createTheme({
 const drawerWidth = 150
 export default function MainLayout() {
   const location = useLocation()
+  const navigate = useNavigate()
 
   return (
     <ThemeProvider theme={theme}>
@@ -51,7 +52,7 @@ export default function MainLayout() {
 
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
           <Toolbar>
-            <Typography variant="h6" noWrap component="div">
+            <Typography variant="h6" noWrap component="div" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
               Рик и Морти
             </Typography>
           </Toolbar>
@@ -81,7 +82,7 @@ export default function MainLayout() {
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
-          <ViewRouter />
+          <Outlet />
         </Box>
       </Box>
     </ThemeProvider>
