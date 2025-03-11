@@ -52,6 +52,12 @@ interface ILoginFormData {
 	password: string
 }
 
+
+interface IInputValues {
+	label: string
+	value: string
+}
+
 interface IFormInputs {
 	name: string
 	type: string
