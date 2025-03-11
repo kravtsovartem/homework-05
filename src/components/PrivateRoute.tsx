@@ -1,14 +1,15 @@
 import useAuth from '@/hooks/useAuth'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 interface IPrivateRouteProps {
   element: React.ReactNode
 }
 
 export default function PrivateRoute({ element }: IPrivateRouteProps) {
-  const context = useAuth()
+  const auth = useAuth()
+	const location = useLocation()
 
-  if (!context.signIn) {
+  if (!auth.signIn) {
     return <Navigate to="/login" replace state={{ from: location.pathname }} />
   }
 
