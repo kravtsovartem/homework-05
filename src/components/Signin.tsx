@@ -27,7 +27,7 @@ const SignIn = ({ onSubmit }: ISigninProps) => {
   const formRef = useRef<HTMLFormElement>(null)
 
   const inputs = useRef<ILoginFormData>({
-    email: '',
+    login: '',
     password: '',
   })
 

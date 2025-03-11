@@ -37,3 +37,30 @@ interface IMenu {
 	name: string
 	link: string
 }
+
+interface IAuthContextData {
+	user: string
+	signIn: boolean
+	login: (user: string, callback: () => void) => void
+	logout: (callback: () => void) => void
+}
+
+
+interface ILoginFormData {
+	[key: string]: string
+	login: string
+	password: string
+}
+
+interface IFormInputs {
+	name: string
+	type: string
+	label: string
+	description?: string
+	placeholder?: string
+	icon?: React.ReactNode
+	errorRule?(value: string): boolean
+	errorText?: string
+	required?: boolean
+	values?: IInputValues[]
+}
