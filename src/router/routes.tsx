@@ -5,14 +5,16 @@ import EpisodePage from '@/pages/EpisodePage'
 import IndexPage from '@/pages/IndexPage'
 import LoginPage from '@/pages/LoginPage'
 import MainLayout from '@/layouts/MainLayout'
+import PrivateRoute from '@/components/PrivateRoute'
+import NotFoundPage from '@/pages/NotFoundPage'
 
 const routes = [
   {
-    element: <MainLayout />,
+    element: <PrivateRoute element={<MainLayout />} />,
     children: [
       {
-				index: true,
-        element: <IndexPage />
+        index: true,
+        element: <IndexPage />,
       },
       {
         path: '/characters',
@@ -46,7 +48,7 @@ const routes = [
   },
   {
     path: '*',
-    element: <IndexPage />,
+    element: <NotFoundPage />,
   },
 ]
 
