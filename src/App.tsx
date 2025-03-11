@@ -1,9 +1,12 @@
-import MainLayout from '@/layouts/MainLayout'
+import AuthProvider from '@/contexts/AuthProvider'
+import ViewRouter from '@/router'
 
 export default function App() {
   return (
     <div>
-      <MainLayout />
+      <AuthProvider>
+        <ViewRouter />
+      </AuthProvider>
     </div>
   )
 }
