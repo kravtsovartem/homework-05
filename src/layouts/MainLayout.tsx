@@ -1,4 +1,3 @@
-import ViewRouter from '@/router'
 import {
   AppBar,
   Box,
