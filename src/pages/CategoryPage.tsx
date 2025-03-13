@@ -40,6 +40,9 @@ export default function CategoryPage() {
   )
 
   const sortedListCategory = useCallback(() => {
+		if(!searchParams.has('sort'))
+			return resultData
+
     return resultData?.sort((a, b) => {
       if (searchParams.get('sort') === 'asc') {
         return a.name.localeCompare(b.name)
