@@ -4,22 +4,22 @@ import { useEffect, useState } from "react"
 interface IUseCategory<T> {
 	loading: boolean
 	error: boolean
-	resultData: T
+	resultData: T | undefined
 	hasMore: boolean
 }
+let cancel: Canceler
 
 export default function useRickAndMortyApi<T>(path: string, page?: number): IUseCategory<T> {
 
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false)
-	const [resultData, setData] = useState<T | T[]>()
+	const [resultData, setData] = useState<T | undefined>()
 	const [hasMore, setHasMore] = useState(false)
 
 	useEffect(() => {
 		setData(undefined)
 	}, [path])
 
-	let cancel: Canceler
 
 	useEffect(() => {
 		setLoading(true)
@@ -60,7 +60,7 @@ export default function useRickAndMortyApi<T>(path: string, page?: number): IUse
 	return {
 		loading,
 		error,
-		resultData: resultData,
+		resultData,
 		hasMore
 	}
 }

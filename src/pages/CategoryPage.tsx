@@ -64,8 +64,8 @@ export default function CategoryPage() {
         {sortedListCategory()?.map((item, index, array) => (
           <Card key={item.id} sx={{ maxWidth: 245 }}>
             <CardContent>
+							<span ref={array.length - 5 === index + 1 ? lastNodeRef : null}></span>
               <Typography
-								ref={array.length - 5 === index + 1 ? lastNodeRef : null}
                 sx={{ height: 30 }}
                 gutterBottom
                 variant="h5"
