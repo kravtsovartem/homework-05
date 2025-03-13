@@ -1,10 +1,10 @@
-import category from '@/data/category'
+import useRickAndMortyApi from '@/hooks/useRickAndMortyApi'
 import { Card, CardContent, Typography } from '@mui/material'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 export default function EpisodesPage() {
-  const params = useParams()
+  const location = useLocation()
 
-  const episode: IEpisode | undefined = category.episodes.find((item) => item.id === Number(params.id))
+  const { resultData: episode } = useRickAndMortyApi<IEpisode>(location.pathname)
 
   return (
     <div>
