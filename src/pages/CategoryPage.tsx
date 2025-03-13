@@ -8,7 +8,6 @@ export default function CategoryPage() {
   const location = useLocation()
   const pathApi: string = location.pathname
 
-  console.log(location.pathname)
   const [page, setPage] = useState(1)
 
   const { loading, resultData, hasMore } = useRickAndMortyApi<ICategory[]>(pathApi, page)
@@ -76,7 +75,7 @@ export default function CategoryPage() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link to={`/${pathApi}/${item.id}`}>
+              <Link to={`${pathApi}/${item.id}`}>
                 <Button size="small">Подробнее</Button>
               </Link>
             </CardActions>
