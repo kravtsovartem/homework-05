@@ -1,3 +1,4 @@
+import ErrorBoundary from '@/hoc/ErrorBoundary'
 import {
   AppBar,
   Box,
@@ -51,7 +52,13 @@ export default function MainLayout() {
 
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
           <Toolbar>
-            <Typography variant="h6" noWrap component="div" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              onClick={() => navigate('/')}
+              style={{ cursor: 'pointer' }}
+            >
               Рик и Морти
             </Typography>
           </Toolbar>
@@ -81,7 +88,9 @@ export default function MainLayout() {
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
-          <Outlet />
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
         </Box>
       </Box>
     </ThemeProvider>
