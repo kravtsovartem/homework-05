@@ -25,11 +25,7 @@ interface ILocation {
 	created: string
 }
 
-interface ICategory {
-	[key: string]: ICharacter[] | IEpisode[] | ILocation[]
-	characters: ICharacter[]
-	episodes: IEpisode[]
-	locations: ILocation[]
+interface ICategory extends ICharacter, IEpisode, ILocation {
 }
 
 
