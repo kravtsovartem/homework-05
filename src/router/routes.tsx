@@ -17,27 +17,27 @@ const routes = [
         element: <IndexPage />,
       },
       {
-        path: '/characters',
+        path: '/character',
         element: <CategoryPage />,
       },
       {
-        path: '/locations',
+        path: '/location',
         element: <CategoryPage />,
       },
       {
-        path: '/episodes',
+        path: '/episode',
         element: <CategoryPage />,
       },
       {
-        path: '/characters/:id',
+        path: '/character/:id',
         element: <CharacterPage />,
       },
       {
-        path: '/locations/:id',
+        path: '/location/:id',
         element: <LocationPage />,
       },
       {
-        path: '/episodes/:id',
+        path: '/episode/:id',
         element: <EpisodePage />,
       },
     ],

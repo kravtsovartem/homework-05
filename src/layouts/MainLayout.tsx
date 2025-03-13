@@ -17,15 +17,15 @@ import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 const menu: IMenu[] = [
   {
     name: 'Герои',
-    link: '/characters',
+    link: '/character',
   },
   {
     name: 'Локации',
-    link: '/locations',
+    link: '/location',
   },
   {
     name: 'Эпизоды',
-    link: '/episodes',
+    link: '/episode',
   },
 ]
 
