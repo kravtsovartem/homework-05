@@ -1,21 +1,28 @@
 import { createContext } from 'react'
 
+
+const authUser = localStorage.getItem('user')
+
 const defaultAuthData: IAuthContextData = {
-  user: '',
-  signIn: false,
+	user: authUser,
+	signIn: authUser != null,
 	login(user, callback) {
 
 		this.signIn = true
 		this.user = user
 
-		if(callback) callback()
+		localStorage.setItem('user', user)
+
+		if (callback) callback()
 	},
 	logout(callback) {
-		
+
 		this.signIn = false
 		this.user = ''
 
-		if(callback) callback()
+		localStorage.removeItem('user')
+
+		if (callback) callback()
 	}
 }
 

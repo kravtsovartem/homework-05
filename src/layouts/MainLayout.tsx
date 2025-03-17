@@ -1,10 +1,12 @@
 import ErrorBoundary from '@/hoc/ErrorBoundary'
+import useAuth from '@/hooks/useAuth'
 import {
   AppBar,
   Box,
   createTheme,
   CssBaseline,
   Drawer,
+  IconButton,
   List,
   ListItemButton,
   ListItemText,
@@ -12,6 +14,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
+import { IoLogOutOutline } from 'react-icons/io5'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 const menu: IMenu[] = [
@@ -45,13 +48,15 @@ export default function MainLayout() {
   const location = useLocation()
   const navigate = useNavigate()
 
+  const auth = useAuth()
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
 
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-          <Toolbar>
+          <Toolbar style={{ justifyContent: 'space-between' }}>
             <Typography
               variant="h6"
               noWrap
@@ -61,6 +66,10 @@ export default function MainLayout() {
             >
               Рик и Морти
             </Typography>
+
+            <IconButton onClick={() => auth.logout(() => navigate('/'))}>
+              <IoLogOutOutline />
+            </IconButton>
           </Toolbar>
         </AppBar>
 

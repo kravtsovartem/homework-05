@@ -35,10 +35,10 @@ interface IMenu {
 }
 
 interface IAuthContextData {
-	user: string
+	user: string | null
 	signIn: boolean
-	login: (user: string, callback: () => void) => void
-	logout: (callback: () => void) => void
+	login: (user: string, callback?: () => void) => void
+	logout: (callback?: () => void) => void
 }
 
 
