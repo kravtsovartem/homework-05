@@ -1,7 +1,19 @@
+import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+
 export default function NotFoundPage() {
-	return (
-		<div>
-			<h1>404</h1>
-		</div>
-	)
+  const navigate = useNavigate()
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <h1>404</h1>
+      <Button onClick={() => navigate('/')}>Вернуться на главную</Button>
+    </div>
+  )
 }
