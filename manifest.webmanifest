@@ -5,9 +5,9 @@
   "background_color": "#97ce4c",
   "display": "standalone",
   "orientation": "portrait",
-	"id": "/",
-  "scope": "/",
-  "start_url": "/",
+	"id": "/homework-05/",
+  "scope": "/homework-05/",
+  "start_url": "/homework-05/",
   "icons": [
     {
       "src": "/icons/icon48.png",
