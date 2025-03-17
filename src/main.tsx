@@ -1,13 +1,20 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.tsx";
-import { BrowserRouter } from "react-router-dom";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+import { HashRouter } from 'react-router-dom'
 
-createRoot(document.getElementById("root")!).render(
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/homework-05/sw.js')
+    .then(() => console.log('SW register'))
+    .catch(() => console.log('SW not register'))
+}
+
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>
-);
+)

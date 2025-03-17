@@ -1,13 +1,54 @@
-import Index from '@/pages/Index'
+import CategoryPage from '@/pages/CategoryPage'
+import CharacterPage from '@/pages/CharacterPage'
+import LocationPage from '@/pages/LocationPage'
+import EpisodePage from '@/pages/EpisodePage'
+import IndexPage from '@/pages/IndexPage'
+import LoginPage from '@/pages/LoginPage'
+import MainLayout from '@/layouts/MainLayout'
+import PrivateRoute from '@/components/PrivateRoute'
+import NotFoundPage from '@/pages/NotFoundPage'
 
 const routes = [
   {
-    path: '/',
-    element: <Index />,
+    element: <PrivateRoute element={<MainLayout />} />,
+    children: [
+      {
+        index: true,
+        element: <IndexPage />,
+      },
+      {
+        path: '/character',
+        element: <CategoryPage />,
+      },
+      {
+        path: '/location',
+        element: <CategoryPage />,
+      },
+      {
+        path: '/episode',
+        element: <CategoryPage />,
+      },
+      {
+        path: '/character/:id',
+        element: <CharacterPage />,
+      },
+      {
+        path: '/location/:id',
+        element: <LocationPage />,
+      },
+      {
+        path: '/episode/:id',
+        element: <EpisodePage />,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
   },
   {
     path: '*',
-    element: <Index />,
+    element: <NotFoundPage />,
   },
 ]
 
