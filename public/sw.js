@@ -1,6 +1,6 @@
 const staticCacheName = 'static-site-v2'
 const dynamicCacheName = 'dynamic-site-v2'
-const ASSETS = ['/', 'index.html', 'offline.html']
+const ASSETS = ['/homework-05/', '/homework-05/index.html', '/homework-05/offline.html']
 
 // sw.js
 self.addEventListener('install', async (event) => {

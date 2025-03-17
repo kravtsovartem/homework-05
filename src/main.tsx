@@ -6,7 +6,7 @@ import { HashRouter } from 'react-router-dom'
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/sw.js')
+    .register('/homework-05/sw.js')
     .then(() => console.log('SW register'))
     .catch(() => console.log('SW not register'))
 }
